@@ -1,0 +1,125 @@
+
+/* This is the main side navigation bar css */
+
+.navMain {
+    background-color: rgb(56, 53, 53);
+    margin:0rem;
+    color:rgb(179,179,179);
+    display:flex;
+    padding: 1rem 0.5rem 0.5rem 0rem;
+    border-radius:0.5rem;
+    justify-content:space-between;
+    
+    
+ 
+    white-space:nowrap;
+    
+   
+    
+
+}
+/* Target the parent(fa-ul) and then the child (a) */
+ .fa-ul a:hover{ 
+    color:white;
+}
+.li-link {
+    display:flex;
+    flex-direction: column;
+}
+/* Makes the '+' icon go the right of the container */
+.plus-icon{
+    display:inline-block;
+    
+    
+}
+
+
+.fa-book-open{
+  margin:0px;   
+}
+
+.li-link {
+    margin:0;
+    padding:0;
+}
+
+
+
+:root {
+    font-size:16px;
+}
+
+
+li {
+    list-style-type: none;
+    
+}
+
+
+* {
+    font-family: "Figtree";
+   
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+/* div {
+    margin-bottom: 0.5rem; 
+    
+   
+} */
+
+
+
+
+/* Below is the secondary navigation bar css */
+#sideNav {
+    background-color: rgb(56, 53, 53);
+    margin:0rem;
+    color:rgb(179,179,179);
+    
+    padding: 0.2rem 0.5rem 0.5rem 0px;
+    border-radius:0.5rem;
+}
+
+/* Margin at the bottom of the li except for the last one*/
+#sideNav li:not(:last-child){
+    margin-bottom:1.2rem;
+}
+
+#sideNav li:hover{
+    color:white;
+}
+
+
+
+
+
+
+/* Below is the global css  */
+main {
+    width:60vw;
+    padding: 1rem;
+    display:inline-block;
+    overflow-x:auto;
+}
+
+.navbar {
+    display:flex;
+    flex-direction: column;
+    width:30vw;
+    margin:0;
+    float:left;
+}
+
+body {
+    margin:0;
+    padding:0;
+}
+
+
+
+
