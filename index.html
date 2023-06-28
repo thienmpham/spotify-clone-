@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
     <link rel="stylesheet" href="nav.css">
-    
+    <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/914fe28cc2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -40,7 +40,7 @@
         <a href="#"><i class="fa-solid fa-plus"></i></a>
       </div>
     </div>
-    
+  
 
   <!-- Class of the text bubbles under "Your Library" -->
   <div class="text-bubble">
@@ -48,6 +48,24 @@
     <span>Podcasts & Shows</span>
     <span>Playlists</span>
     <span>Playlists</span>
+  </div>
+
+
+  <!-- This is the drop down menu for Recents -->
+  <div class="nav-bubble">
+    <div class="search-icon">
+      <a href="#"><span><i class="fa-solid fa-search"></i></span></a>
+        </div>
+        <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Recents
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="#">Recents</a>
+      <a href="#">Recently added</a>
+      <a href="#">Alphabetical</a>
+      <a href="#">Creator</a>
+    </div>
   </div>
 </div>
 </nav>
@@ -60,8 +78,10 @@
 
 
 <main>
-
-
+<!-- Right arrow icon in the header of main body -->
+<div class = "right-arrow">
+  <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+</div>
  <h1>Good afternoon</h1>
   <p>Chrome, Firefox, and Edge are the most used browsers today.</p>
 
