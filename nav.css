@@ -10,8 +10,16 @@
     line-height:0.5rem;
 }
 
-
-
+.top-library {
+    display:flex;
+    justify-content: space-evenly;
+    
+}
+.top-library div{
+    background-color:rgb(83,83,83);
+    padding:1.5rem 8rem 1.5rem;
+    border-radius:0.2rem;
+}
 /* This is the main side navigation bar css */
 
 .navMain {
@@ -184,6 +192,15 @@
 .show {
     display:block;
     
+}
+
+
+.playlist-content {
+    width:auto;
+    height:3.5rem;
+    background-color: rgb(33,33,33);
+    margin: 0 0.5rem;
+    border-radius:0.5rem;
 }
 /* Below is the secondary navigation bar css */
 #sideNav {
