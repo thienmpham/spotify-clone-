@@ -10,12 +10,12 @@ class Dropdown {
   
     initialize() {
       document.addEventListener('click', e => {
-        if (e.target.classList.contains('dropdown-action')) {
+        //if (e.target.classList.contains('dropdown-action')) {
           this.hideOtherDropdowns(e.target);
           this.handleClick(e.target);
-        } else {
+        /*} else {
           this.hideOtherDropdowns(null);
-        }
+        }*/
       });
     }
   
