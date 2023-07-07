@@ -31,15 +31,26 @@
 <!-- Navigation Bar that has your library etc.-->
 
 <div class="navMain">
+  <div class="container-space">
     <div class="fa-ul">
         <li class="li-link">
             <a href="#"><i class="fa-li"><i class="fa-solid fa-book-open"></i></i><span>Your Library</span></a>
         </li>
         <!-- Plus icon class -->
       <div class="plus-icon">
-        <a href="#"><i class="fa-solid fa-plus"></i></a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-action">
+            <i class="fa-solid fa-plus"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Create a new playlist</a></li>
+            <li><a href="#">Create a new playlist folder</a></li>
+          </ul>
+        </div>
+       
       </div>
     </div>
+  </div>
   
 
   <!-- Class of the text bubbles under "Your Library" -->
@@ -55,22 +66,24 @@
   <div class="nav-bubble">
     <div class="search-icon">
       <a href="#"><span><i class="fa-solid fa-search"></i></span></a>
-        </div>
-        <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Recents
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content" id="myDropdown">
-      <div id="sort-by-text">
-        Sort by
-      </div>
-      <a href="#">Recents</a>
-      <a href="#">Recently added</a>
-      <a href="#">Alphabetical</a>
-      <a href="#">Creator</a>
+    </div>
+    <div class="dropdown">
+      <div class="recent-container">
+      Recents<i class="fa fa-caret-down"></i>
+        <ul class="dropdown-menu">
+          <span>Sort By</span>
+          <li><a href="#">Recents</a></li>
+          <li><a href="#">Recently added</a></li>
+          <li><a href="#">Alphabetical</a></li>
+          <li><a href="#">Creator</a></li>
+        </ul>
     </div>
   </div>
-</div>
+      
+
+    </div>
+    
+    
 <!-- Class for playlist of the user -->
     <div class="user-playlist">
       <div class="playlist-content">
@@ -102,7 +115,8 @@
             <span id="playlist-text-2"><br>Playlist * 216 songs</br></span>
       </div>
     </div>
-    
+  </div>
+  </div>
    
 </nav>
 
