@@ -42,7 +42,7 @@
     width: 1rem;
     height:1rem;
     
-    margin-top:0.5rem;
+   
     display:inline-block;
     text-align: center;
     vertical-align:middle;
@@ -83,16 +83,14 @@
 
 .dropdown {
     position: relative;
-    margin-left:auto;
-    margin-right:0;
-    display:inline-block;
+    
     
   }
 
 .dropdown-action {
     display: flex;
     align-items: center;
-    padding-right: 10px;
+    
     
     
     flex-direction:row;
@@ -129,14 +127,16 @@
 .plus-icon {
     display:inline-block;
 }
+
+/* Makes the '+' icon go the right of the container */
 .fa-plus {
     
     padding:0.6rem;
     width: 1rem;
-    height:1rem;
+    height: 1rem;
     text-align: center;
-    vertical-align:middle;
-    line-height:0.5rem;
+    vertical-align: bottom;
+    
  
     
 }
@@ -183,9 +183,12 @@
     
 }
 
-/* CSS for nav bubble */
+/* CSS for nav bubble ... makes fa-caret-down go all the way to the right*/
 .nav-bubble {
-    display:inline-block;
+    margin-top:1rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     
 }
 
@@ -197,10 +200,21 @@
     
 }
 .recent-container {
-    float:right;
+    vertical-align:bottom;
+    text-align:center;
+    width:6rem;
+    justify-content:space-around;
+    line-height:0.5rem;
+    display:inline-block;
+    display:flex;
 }
 
+.recent-container:hover {
+    color:white;
+}
 /* CSS for the playlist */
+
+
 .playlist-content {
     width:auto;
     height:3.2rem;
@@ -218,7 +232,7 @@
 
 /* Container for playlist image */
 .playlist-image { 
-    
+    margin-left:0.5rem;
     display:inline-block;
     height:100%;
     
