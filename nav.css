@@ -110,6 +110,7 @@ ul {
     font-size:0.9rem;
     color:rgb(194, 194, 194); 
 }
+
 /* Highlights the padding of dropdown-menu */
 .dropdown-menu li:hover:not(#sort-by)  {
     background-color:rgb(83,83,83);
@@ -157,14 +158,23 @@ ul {
     height: 1rem;
     text-align: center;
     vertical-align: bottom;
-    
- 
-    
+}
+
+.plus-icon .dropdown-menu li {
+    color:white;
+
 }
 .plus-icon .dropdown-menu {
-    width:12rem;
+    width:14rem;
     
 }
+
+.plus-icon img{
+    filter: invert(87%) sepia(89%) saturate(0%) hue-rotate(269deg) brightness(109%) contrast(97%);
+    vertical-align:middle;
+    margin-right:0.2rem;
+}
+
 .fa-plus:hover{
     border-radius:50%;
     
@@ -215,6 +225,12 @@ ul {
     align-items:center;
     
 }
+/* Stops links from changing color when hovering over */
+.nav-bubble a:hover { 
+    color: inherit;
+    
+
+}
 
 .fa-caret-down {
     text-align:center;
@@ -236,6 +252,9 @@ ul {
 .recent-container:hover {
     color:white;
 }
+
+
+
 /* CSS for the playlist */
 
 
@@ -363,4 +382,8 @@ li {
 a {
     text-decoration: none;
     color:inherit;
+}
+
+a:focus {
+    outline:0;
 }
