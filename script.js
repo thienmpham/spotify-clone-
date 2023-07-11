@@ -1,3 +1,5 @@
+
+// For the dropdown menu
 class Dropdown {
 
     constructor() {
@@ -41,3 +43,26 @@ class Dropdown {
   
   
   document.addEventListener('DOMContentLoaded', () => new Dropdown());
+
+// Add new playlist when "Create new playlist" link is clicked 
+function createPlaylist () {
+
+  document.addEventListener( 'DOMContentLoaded', function() {
+    // Get the create Playlist and playlist container elements
+    var createNewPlaylistElement = document.getElementById('createNewPlaylist'); 
+    var playlistContainerElement = document.getElementById('playlistContainer'); 
+    
+    createNewPlaylistElement.addEventListener('click', function(event) {
+      event.preventDefault();
+      
+    // Get the reference to an already existing playlist element
+    var existingPlaylist = document.querySelector('.playlist-content');
+    
+    // Create a new playlist element as a copy of the existing element
+    var newPlaylist = existingPlaylist.cloneNode(true);
+
+    // Append the playlist element to the container 
+    playlistContainerElement.appendChild(newPlaylist);
+  });
+});
+}
