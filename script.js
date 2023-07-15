@@ -67,22 +67,30 @@ class Dropdown {
 // //});
 // }
 
-function createPlaylist () {
+document.addEventListener('DOMContentLoaded',function createPlaylist () {
   // 1. Create div element 
-  let newPlaylistDiv = document.createElement('div'); 
-  // The new div will have elements from class: playlist-content
-  newPlaylistDiv.classList.add('playlist-content');
-
-  // Adds the newPlaylistDiv to the playlist container
-  playlistContainerDiv.appendChild(newPlaylistDiv);
-
-
-
-
-  }
-  //Get the container of the playlist 
-  let playlistContainerDiv = document.querySelector('.user-playlist'); 
+  let div = document.createElement('div'); 
   
+  // 2. Define and Get the HTML collection  of playlist content
+  let playlistContainerDiv = document.getElementsByClassName('playlist-content');
+  
+  // The new div will have elements from class: playlist-content
+  let newPlaylistDiv = div.classList.add('playlist-content');
+  console.log(newPlaylistDiv);
+
+  
+  
+
+
+
+
+  });
+  let newPlaylistDiv = document.createElement('div'); 
+  
+ 
+  //Get the container of the playlist 
+  //let playlistContainerDiv = document.querySelector('.user-playlist'); 
+  //console.log(playlistContainerDiv);
   // // 2. Adds an event listener to the link button "Create new playlist"
   //  document.getElementById('createNewPlaylist').addEventListener('click', function(){
   //    alert("Div was clicked!");
@@ -91,3 +99,5 @@ function createPlaylist () {
     //  Adds an event listener to the link button "Create new playlist"
     const createNewPlaylist = document.getElementById('createNewPlaylist');
     createNewPlaylist.addEventListener('click', createPlaylist);
+    
+  
