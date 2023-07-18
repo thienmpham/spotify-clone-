@@ -68,36 +68,33 @@ class Dropdown {
 // }
 
 document.addEventListener('DOMContentLoaded',function createPlaylist () {
-  // 1. Create div element 
+  // 1. Define and Create div element 
   let div = document.createElement('div'); 
   
   // 2. Define and Get the HTML collection  of playlist content
   let playlistContainerDiv = document.getElementsByClassName('playlist-content');
-  
-  // The new div will have elements from class: playlist-content
-  let newPlaylistDiv = div.classList.add('playlist-content');
-  console.log(newPlaylistDiv);
+  console.log(playlistContainerDiv);
 
+  // 3.playListContainerDiv element will be added to the empty div 
+  div.append(playlistContainerDiv);
+  console.log(div);
   
+  //Add new div to the class .user-playlist
+  let userPlaylist = document.getElementById('user-playlist-container');
+  console.log(userPlaylist);
+  userPlaylist.appendChild(div);
   
-
+   // 4. Add an event listener to the "Create new playlist" dropdown option 
+   const createNewPlaylistOption = document.getElementById('create-new-playlist-option');
+   console.log(createNewPlaylistOption);
+   createNewPlaylistOption.addEventListener('click', createPlaylist, false);
 
 
 
   });
-  let newPlaylistDiv = document.createElement('div'); 
   
- 
-  //Get the container of the playlist 
-  //let playlistContainerDiv = document.querySelector('.user-playlist'); 
-  //console.log(playlistContainerDiv);
-  // // 2. Adds an event listener to the link button "Create new playlist"
-  //  document.getElementById('createNewPlaylist').addEventListener('click', function(){
-  //    alert("Div was clicked!");
-  //  }); 
 
-    //  Adds an event listener to the link button "Create new playlist"
-    const createNewPlaylist = document.getElementById('createNewPlaylist');
-    createNewPlaylist.addEventListener('click', createPlaylist);
-    
+
+
+   
   
