@@ -42,37 +42,34 @@ class Dropdown {
 
 
 
-document.addEventListener('DOMContentLoaded', () => new Dropdown());
 
-
-
-function createPlaylist () {
-
+  document.addEventListener('DOMContentLoaded', () => new Dropdown());
+  
+  document.addEventListener('DOMContentLoaded', () => new createPlaylist());
 // 1. Define and Create div element 
 let div = document.createElement('div'); 
 
 // 2. Define and Get the HTML collection  of playlist content
-let playlistContainerDiv = document.getElementById('new-playlist-content');
-// Clone the playistContainerDiv so that it does not target an already existing playlist content
-const clonedPlaylistContainerDiv = playlistContainerDiv.cloneNode(true);
-// Assign unique id to cloned div 
-clonedPlaylistContainerDiv.id = 'cloned-playlist-content';
+const playlistContainerDiv = document.getElementById('new-playlist-content');
 
-console.log(clonedPlaylistContainerDiv);
-
-// 3.playListContainerDiv element will be added to the empty div 
-div.append(clonedPlaylistContainerDiv);
-console.log(div);
-
-
-//Add new div to the class .user-playlist
 let userPlaylist = document.getElementById('user-playlist-container');
 console.log(userPlaylist);
-userPlaylist.appendChild(div);
 
+  
+function createPlaylist () {
+    // Clone the playistContainerDiv so that it does not target an already existing playlist content
+    const clonedPlaylistContainerDiv = playlistContainerDiv.cloneNode(true);
+    // Assign unique id to cloned div 
+    clonedPlaylistContainerDiv.id = 'cloned-playlist-content';
 
+    console.log(clonedPlaylistContainerDiv);
 
+    // 3.playListContainerDiv element will be added to the empty div 
+    div.append(clonedPlaylistContainerDiv);
+    console.log(div);
+    //Add new div to the class .user-playlist
 
+    
 
 
 };
@@ -83,8 +80,10 @@ const createNewPlaylistOption = document.getElementById('create-new-playlist-opt
 console.log(createNewPlaylistOption);
 
 
-createNewPlaylistOption.addEventListener('click', createPlaylist);
-
+//createNewPlaylistOption.addEventListener('click', createPlaylist);
+  createNewPlaylistOption.addEventListener('click', function(createPlaylist) {
+    userPlaylist.appendChild(div);
+  });
 });
  
 
