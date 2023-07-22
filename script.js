@@ -66,7 +66,7 @@ function createPlaylist () {
 
     // 3.playListContainerDiv element will be added to the empty div 
     div.append(clonedPlaylistContainerDiv);
-    console.log(div);
+  
     //Add new div to the class .user-playlist
 
     
@@ -81,13 +81,13 @@ console.log(createNewPlaylistOption);
 
 
 //createNewPlaylistOption.addEventListener('click', createPlaylist);
-  createNewPlaylistOption.addEventListener('click', function(createPlaylist) {
-    userPlaylist.appendChild(div);
+  createNewPlaylistOption.addEventListener('click', function() {
+    userPlaylist.prepend(div);
+    createPlaylist();
   });
 });
  
 
-  
 
 
 
