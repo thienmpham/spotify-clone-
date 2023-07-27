@@ -83,7 +83,7 @@ createNewPlaylistOption.addEventListener('click', function() {
       // 3.playListContainerDiv element will be added to the empty div 
       div.append(clonedPlaylistContainerDiv);
 
-     
+      // Counter to display the # of playlists created
       counter++;
       console.log(counter);
       playlistTextCounter = document.getElementById('playlist-text-counter');
@@ -93,12 +93,28 @@ createNewPlaylistOption.addEventListener('click', function() {
 });
  
 
-// Get amount of elements in div 
 
+// URL route for Singe page application (SPA)
 
+document.addEventListener('click', (e) => {
+    const {target} = e; 
+    if(!target.matches('navMain a')) {
+      return;
 
+    }
+    e.preventDefault(); 
+    urlRoute();
+})
 
-  
+const urlRoute = (event) => { 
+    event = event || window.event;
+    event.preventDefault(); 
+   
+}
+
+const urlLocationHandler = async () => { 
+
+}
   
 
    

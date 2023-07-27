@@ -103,6 +103,7 @@ ul {
 
 .fa-caret-down {
     margin-left:1rem;
+    margin-right:0.8rem;
 }
 
 .dropdown-menu li{
@@ -313,7 +314,7 @@ ul {
     margin:0rem;
     color:rgb(179,179,179);
     
-    padding: 0.2rem 0.5rem 0.5rem 0px;
+    padding: 1rem 0rem 1rem 0rem;
     border-radius:0.5rem;
 }
 
