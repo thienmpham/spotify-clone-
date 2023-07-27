@@ -94,11 +94,11 @@ createNewPlaylistOption.addEventListener('click', function() {
  
 
 
-// URL route for Singe page application (SPA)
-
+// URL route for Single page application (SPA)
+// Prevents the default behavior of any a href links within the class: navMain
 document.addEventListener('click', (e) => {
     const {target} = e; 
-    if(!target.matches('navMain a')) {
+    if(!target.matches('nav a')) {
       return;
 
     }
@@ -106,16 +106,55 @@ document.addEventListener('click', (e) => {
     urlRoute();
 })
 
+// Creates an object that maps the url to the template, title and description
+const urlRoutes = {
+  404: {
+    template: "/templates/404.html", 
+    title: "", 
+    description: "",
+  },
+  "/": { 
+    template: "/templates/home.html", 
+    title: "", 
+    description: "",
+  },
+  "/search": { 
+    template: "/templates/search.html", 
+    title: "", 
+    description: "",
+  },
+  "/playlist": { 
+    template: "/templates/playlist.html", 
+    title: "", 
+    description: "",
+  }
+}
+// Watches the url and calls the urlLocationHandler 
 const urlRoute = (event) => { 
     event = event || window.event;
     event.preventDefault(); 
-   
+    window.history.pushState({}, '', event.target.href); 
+    urlLocationHandler(); 
 }
 
+// Handles the URL location 
 const urlLocationHandler = async () => { 
+    const location = window.location.pathname; 
+    if(location.length == 0) {
+      location = "/"; 
+    }
 
-}
-  
+     const route = urlRoutes[location] || urlRoutes[404]; 
+     const html = await fetch(route.template).then((response) => 
+     response.text());
+     document.getElementById("main-content").innerHTML = html;
+};
+// Adds an event listener that watches for for url changes 
+window.onpopstate = urlLocationHandler;
+
+window.route = urlRoute;
+
+urlLocationHandler();
 
    
   

@@ -21,8 +21,8 @@
 <div id="sideNav">
 
   <ul class="fa-ul">
-    <li><a href="#"><span class="fa-li"><i class="fa-solid fa-house"></i></span>Home</a></li>
-    <li><a href="#"><span class="fa-li"><i class="fa-solid fa-search"></i></span>Search</a></li>
+    <li><a href="/"><span class="fa-li"><i class="fa-solid fa-house"></i></span>Home</a></li>
+    <li><a href="/search"><span class="fa-li"><i class="fa-solid fa-search"></i></span>Search</a></li>
 
   </ul>
 </div>
@@ -84,20 +84,21 @@
     
     
 <!-- Class for playlist of the user -->
+  <a href="/playlist">
     <div class="user-playlist" id="user-playlist-container">
       <div class="playlist-content" id="new-playlist-content">
         <div class="playlist-image">
-          <img id="music-img" src="/photos/music.svg" alt="Tyler the Creator album">
+          <img id="music-img" src="/photos/music.svg" alt="Default playlist">
         </div>
           <div class="playlist-text">
             <span id="playlist-text-main">My Playlist #<span id="playlist-text-counter">1</span></span>
             <span id="playlist-text-sub"><br>Playlist * user</br></span>
+          </div>
       </div>
     </div>
+  </a>
+  </div>
 
-  </div>
-  </div>
-</div>
 </nav>
 
 
@@ -108,18 +109,20 @@
 
 
 <main>
-<!-- Right arrow icon in the header of main body -->
-<div class = "right-arrow">
-  <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
-</div>
- <h1>Good evening</h1>
- <div class="top-library">
-    <div>Tigerbelly</div>
-    <div>Liked Songs</div>
-    <div>Stray Kids</div>
- </div>
+    <div id="main-content">
+        <!-- Right arrow icon in the header of main body -->
+        <div class = "right-arrow">
+            <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+        </div>
 
- </main>
+        <h1>Good evening</h1>
+        <div class="top-library">
+            <div>Tigerbelly</div>
+            <div>Liked Songs</div>
+            <div>Stray Kids</div>
+        </div>
+    </div>
+</main>
 
  <script src="script.js"></script>
 </body>
