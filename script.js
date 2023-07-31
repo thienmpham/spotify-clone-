@@ -96,15 +96,15 @@ createNewPlaylistOption.addEventListener('click', function() {
 
 // URL route for Single page application (SPA)
 // Prevents the default behavior of any a href links within the class: navMain
-document.addEventListener('click', (e) => {
-    const {target} = e; 
-    if(!target.matches('nav a')) {
-      return;
+// document.addEventListener('click', (e) => {
+//     const {target} = e; 
+//     if(!target.matches('nav a')) {
+//       return;
 
-    }
-    e.preventDefault(); 
-    urlRoute();
-})
+//     }
+//     e.preventDefault(); 
+//     urlRoute();
+// })
 
 // Creates an object that maps the url to the template, title and description
 const urlRoutes = {
@@ -118,43 +118,48 @@ const urlRoutes = {
     title: "", 
     description: "",
   },
-  "/search": { 
+  search: { 
     template: "/templates/search.html", 
     title: "", 
     description: "",
   },
-  "/playlist": { 
+  playlist: { 
     template: "/templates/playlist.html", 
     title: "", 
     description: "",
-  }
-}
+  },
+};
 // Watches the url and calls the urlLocationHandler 
-const urlRoute = (event) => { 
-    event = event || window.event;
-    event.preventDefault(); 
-    window.history.pushState({}, '', event.target.href); 
-    urlLocationHandler(); 
-}
+// const urlRoute = (event) => { 
+//     event = event || window.event;
+//     event.preventDefault(); 
+//     window.history.pushState({}, "", event.target.href); 
+//     urlLocationHandler(); 
+// }
 
 // Handles the URL location 
 const urlLocationHandler = async () => { 
-    const location = window.location.pathname; 
+    const location = window.location.hash.replace("#", ""); 
     if(location.length == 0) {
       location = "/"; 
     }
 
-     const route = urlRoutes[location] || urlRoutes[404]; 
+    // get the route object from the urlRoutes object
+     const route = urlRoutes[location] || urlRoutes["404"];
+     // Get html content from the templates 
      const html = await fetch(route.template).then((response) => 
      response.text());
      document.getElementById("main-content").innerHTML = html;
 };
 // Adds an event listener that watches for for url changes 
-window.onpopstate = urlLocationHandler;
+// window.onpopstate = urlLocationHandler;
 
-window.route = urlRoute;
+// window.route = urlRoute;
+
+// urlLocationHandler();
+
+window.addEventListener("hashchange", urlLocationHandler);
 
 urlLocationHandler();
-
    
   
