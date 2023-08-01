@@ -109,7 +109,7 @@ createNewPlaylistOption.addEventListener('click', function() {
 // Creates an object that maps the url to the template, title and description
 const urlRoutes = {
   404: {
-    template: "/templates/404.html", 
+    template: "/templates/404.html",
     title: "", 
     description: "",
   },
@@ -119,7 +119,7 @@ const urlRoutes = {
     description: "",
   },
   search: { 
-    template: "/templates/search.html", 
+    template: "./templates/search.html", 
     title: "", 
     description: "",
   },
@@ -128,7 +128,9 @@ const urlRoutes = {
     title: "", 
     description: "",
   },
+
 };
+
 // Watches the url and calls the urlLocationHandler 
 // const urlRoute = (event) => { 
 //     event = event || window.event;
@@ -139,7 +141,7 @@ const urlRoutes = {
 
 // Handles the URL location 
 const urlLocationHandler = async () => { 
-    const location = window.location.hash.replace("#", ""); 
+    var location = window.location.hash.replace("#", ""); 
     if(location.length == 0) {
       location = "/"; 
     }
@@ -147,8 +149,7 @@ const urlLocationHandler = async () => {
     // get the route object from the urlRoutes object
      const route = urlRoutes[location] || urlRoutes["404"];
      // Get html content from the templates 
-     const html = await fetch(route.template).then((response) => 
-     response.text());
+     const html = await fetch(route.template).then((response) => response.text());
      document.getElementById("main-content").innerHTML = html;
 };
 // Adds an event listener that watches for for url changes 
