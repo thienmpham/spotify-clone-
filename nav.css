@@ -1,4 +1,15 @@
 /* Main body of code */
+main {
+    width:60vw;
+    padding: 1.5rem;
+    display:inline-block;
+    overflow-x:hidden;
+    background-color: rgb(18,18,18);
+    border-radius:0.5rem;
+    color:white;
+    margin: 0.4em 0.4em 0.4em 0em;
+}
+
 .fa-chevron-left { 
     
     border-radius:50%;
@@ -12,14 +23,34 @@
 }
 
 .top-library {
-    display:flex;
-    justify-content: space-evenly;
+    
+    font-size: 1.1rem;
+    /* flex-wrap: wrap; */
+    /* display:flex; */
     
 }
-.top-library div{
+
+.top-box { 
     background-color:rgb(83,83,83);
-    padding:1.5rem 8rem 1.5rem;
+    width:33%;
+    height: 4rem;
     border-radius:0.2rem;
+    /* flex: 1; */
+    float:left;
+    margin-bottom: 1rem;
+}
+
+.top-box:nth-child(3n) { 
+    margin-right:1.5rem;
+   
+}
+
+@media (max-width: 1240px) { 
+    .top-box { 
+        color:red;
+        
+        
+    }
 }
 /* This is the main side navigation bar css */
 
@@ -336,16 +367,6 @@ ul {
 
 
 /* Below is the global css  */
-main {
-    width:60vw;
-    padding: 1rem;
-    display:inline-block;
-    overflow-x:hidden;
-    background-color: rgb(18,18,18);
-    border-radius:0.5rem;
-    color:white;
-    margin: 0.4em 0.4em 0.4em 0em;
-}
 
 .navbar {
     display:flex;
@@ -387,4 +408,8 @@ a {
 
 a:focus {
     outline:0;
+}
+
+html, body { 
+    min-width:800px;
 }
