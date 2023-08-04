@@ -31,15 +31,15 @@ main {
 }
 
 .top-box{ 
-    background-color:rgb(83,83,83);
-    /* width:33.3%; */
+    display:flex;
+    background-color:rgb(83,83,83,0.5);
     height: 4rem;
     border-radius:0.2rem;
     flex:1;
-    /* flex: 1; */
-   
+    border-radius:0.3rem;
     margin-bottom: 1rem;
     margin-right: 1rem;
+    overflow:hidden;
 }
 .flex-break-1 { 
     flex-basis:100%;
@@ -65,10 +65,57 @@ main {
         height:0;
         
     }
-    .top-box{ 
-        color:red;
-    }
+    
 }
+
+.top-playlist-image { 
+   height:inherit;
+   display:inline-block;
+   width:4rem;
+}
+.top-playlist-image img{
+    max-width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+.top-playlist-text {
+    display: flex;
+    flex: 1;
+    text-align:center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.top-playlist-text span { 
+   
+    color:white;
+}
+
+.main-page-header {
+    display:flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    line-height:1rem;
+}
+#header-1 {
+    display: inline-block;
+
+}
+#header-1:hover {
+    text-decoration:underline;
+}
+
+#header-2 {
+    float: right;
+    color:rgb(179,179,179);
+    font-size:0.9rem;
+
+}
+#header-2:hover{
+    text-decoration:underline;
+}
+
 /* This is the main side navigation bar css */
 
 .navMain {
@@ -310,7 +357,7 @@ ul {
 .playlist-content {
     width:auto;
     height:3.2rem;
-   
+    position:relative;
   
     border-radius:0.5rem;
     padding:0.5rem 0;
@@ -342,16 +389,12 @@ ul {
     vertical-align:top;
     margin-top:0.3rem;
     margin-left:0.3rem;
-}
-#playlist-text-1{
     color:white;
-    
-    
-    
 }
 
-#playlist-text-2 {
+#playlist-text-sub {
     font-size:0.8rem;
+    color:rgb(179,179,179);
 }
 
 
