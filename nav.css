@@ -28,11 +28,12 @@ main {
    
     display:flex;
     flex-wrap:wrap;
+    /* gap:1rem; */
 }
 
 .top-box{ 
     display:flex;
-    background-color:rgb(83,83,83,0.5);
+    background-color:rgb(83,83,83,0.3);
     height: 4rem;
     border-radius:0.2rem;
     flex:1;
@@ -40,6 +41,10 @@ main {
     margin-bottom: 1rem;
     margin-right: 1rem;
     overflow:hidden;
+}
+
+.top-box:hover {
+    background-color:rgb(83,83,83,0.5);
 }
 .flex-break-1 { 
     flex-basis:100%;
@@ -65,18 +70,27 @@ main {
         height:0;
         
     }
-    
+    .playlist-card { 
+        width:25%;
+        color:red;
+        flex-grow:1;
+        
+        
+    }
+    .playlist-card-container {
+        overflow: hidden;
+    }
 }
 
 .top-playlist-image { 
-   height:inherit;
+   /* height:inherit; */
    display:inline-block;
-   width:4rem;
+   /* width:4rem; */
 }
 .top-playlist-image img{
     max-width: 100%;
     height: 100%;
-    object-fit:contain;
+    
 }
 .top-playlist-text {
     display: flex;
@@ -115,6 +129,48 @@ main {
 #header-2:hover{
     text-decoration:underline;
 }
+.playlist-card-container {
+    display:flex;
+    gap:1.5rem;
+    
+   
+}
+.playlist-card { 
+    width:16.6%;
+    display:flex;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    background-color:rgb(83,83,83,0.1);
+    flex-direction:column;
+    
+    /* margin: 0 0.5rem 0 0.5rem; */
+    
+}
+.playlist-card:hover { 
+    background-color:rgb(83,83,83,0.3);
+
+}
+.playlist-card-image { 
+   margin-bottom:0.5rem;
+}
+.playlist-card-image img{ 
+    max-width: 100%;
+    height: 100%;
+    border-radius: 0.2rem;
+    box-shadow: 0rem 0.5rem 1rem rgb(18,18,18);
+
+}
+
+.playlist-card-name {
+    margin-bottom:0.5rem;
+    font-size:1.1rem;
+}
+
+.playlist-card-description { 
+    font-size:0.9rem;
+    color:rgb(179,179,179);
+}
+
 
 /* This is the main side navigation bar css */
 
@@ -150,6 +206,7 @@ main {
   
     
 }
+
 
 /* Target the parent(fa-ul) and then the child (a) */
  .navMain a:hover{ 
