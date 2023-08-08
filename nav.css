@@ -1,13 +1,15 @@
 /* Main body of code */
 main {
-    /* width:60vw; */
+    display:flex;
+    
     padding: 1.5rem;
-    /* display:inline-block; */
-    overflow-x:hidden;
+    
+    overflow: auto;
     background-color: rgb(18,18,18);
     border-radius:0.5rem;
     color:white;
-    margin: 0.4rem 0.4rem 0.4rem 0em;
+    margin: 1rem 0.4rem 0.4rem 0em;
+    height: 100%;
 }
 
 .fa-chevron-left { 
@@ -17,7 +19,8 @@ main {
     background-color:rgb(33,33,33);
     height:0.5rem;
     width:0.5rem;
-    text-align: center;
+    /* text-align: center; */
+    align-items:center;
     vertical-align:middle;
     line-height:0.5rem;
 }
@@ -71,14 +74,26 @@ main {
         
     }
     .playlist-card { 
-        width:25%;
+        width:50%;
         color:red;
-        flex-grow:1;
+        /* flex-grow:1; */
+        
         
         
     }
-    .playlist-card-container {
-        overflow: hidden;
+    .playlist-card:nth-last-child(-n+2) {
+        display:none;
+    }
+}
+   
+
+
+@media (max-width: 830px) { 
+    .playlist-card:nth-last-child(-n+4) {
+        display:none;
+    }
+    .playlist-card {
+        color:lightblue;
     }
 }
 
@@ -105,7 +120,7 @@ main {
     color:white;
 }
 
-.main-page-header {
+.playlist-card-header {
     display:flex;
     height: 4rem;
     align-items: center;
@@ -136,7 +151,7 @@ main {
    
 }
 .playlist-card { 
-    width:16.6%;
+    
     display:flex;
     padding: 1rem;
     border-radius: 0.2rem;
@@ -182,7 +197,7 @@ main {
     flex-direction:column;
     padding: 1rem 0.5rem 0.5rem 0.5rem;
     border-radius:0.5rem;
-    
+    height:100%;
     white-space:nowrap;
     
    
@@ -454,14 +469,26 @@ ul {
     color:rgb(179,179,179);
 }
 
-
-
+.nav-playlist-container {
+    height: 100%;
+    overflow-y: scroll;
+    
+}
+::-webkit-scrollbar {
+    background: rgb(179,179,179);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(179,179,179, 0.3);
+    border-radius:0.5rem;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(18,18,18) ;
+}
 /* Below is the secondary navigation bar css */
 #sideNav {
     background-color: rgb(18,18,18);
     margin:0rem;
     color:rgb(179,179,179);
-    
     padding: 1rem 0rem 1rem 0rem;
     border-radius:0.5rem;
 }
@@ -489,14 +516,18 @@ ul {
     display:flex;
     flex-direction: column;
     width:30vw;
-    margin:0.4rem;
+    margin: 0 0.4rem 0.4rem 0.4em;
     float:left;
+    height:100%;
+    
 }
 
-body {
+html, body {
     margin:0;
     padding:0;
     background-color:black;
+    height:100%;
+    
 }
 
 :root {
@@ -524,6 +555,3 @@ a:focus {
     outline:0;
 }
 
-html, body { 
-    min-width:800px;
-}
