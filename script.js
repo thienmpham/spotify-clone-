@@ -162,5 +162,19 @@ const urlLocationHandler = async () => {
 window.addEventListener("hashchange", urlLocationHandler);
 
 urlLocationHandler();
-   
-  
+
+
+//
+// Authorization for Spotify 
+//
+
+function requestAuthorization(){
+  client_id = document.getElementById("clientId").value; //fetch client id
+  client_secret = document.getElementById("clientSecret").value; // fetch client secret 
+  localStorage.setItem("client_id", client_id); // save to local storage for future use
+  localStorage.setItem("client_secret", client_secret) // save to local storage for future use 
+  // in real application do not expose client_secret to the user 
+
+  let url
+
+}
