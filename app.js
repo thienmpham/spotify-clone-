@@ -8,5 +8,6 @@ function requestAuthorization(){
     const AUTH_ENDPOINT  = "https://accounts.spotify.com/authorize";
     const RESPONSE_TYPE = "token";
     
+
   
   }
