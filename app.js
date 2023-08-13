@@ -1,8 +1,7 @@
 
 
-const client_id = "d119d36427944ecd8e12365f96cea46e"; 
-const client_secret = "54bc45b92038453abb5ddd4644572368" 
-const redirect_uri = "http://127.0.0.1:5500/";
+
+const redirect_uri = "http://127.0.0.1:5500/"
 const auth_endpoint  = "https://accounts.spotify.com/authorize";
 const TOKEN = "https://accounts.spotify.com/api/token";
 
