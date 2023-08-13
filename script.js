@@ -93,19 +93,6 @@ createNewPlaylistOption.addEventListener('click', function() {
 });
  
 
-
-// URL route for Single page application (SPA)
-// Prevents the default behavior of any a href links within the class: navMain
-// document.addEventListener('click', (e) => {
-//     const {target} = e; 
-//     if(!target.matches('nav a')) {
-//       return;
-
-//     }
-//     e.preventDefault(); 
-//     urlRoute();
-// })
-
 // Creates an object that maps the url to the template, title and description
 const urlRoutes = {
   404: {
