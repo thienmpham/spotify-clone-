@@ -96,12 +96,12 @@ createNewPlaylistOption.addEventListener('click', function() {
 // Creates an object that maps the url to the template, title and description
 const urlRoutes = {
   404: {
-    template: "/templates/404.html",
+    template: "./templates/404.html",
     title: "", 
     description: "",
   },
   "/": { 
-    template: "/templates/home.html", 
+    template: "./templates/home.html", 
     title: "", 
     description: "",
   },
@@ -111,7 +111,7 @@ const urlRoutes = {
     description: "",
   },
   playlist: { 
-    template: "/templates/playlist.html", 
+    template: "./templates/playlist.html", 
     title: "", 
     description: "",
   },
