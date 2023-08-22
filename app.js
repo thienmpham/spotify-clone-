@@ -93,7 +93,6 @@ function initalizeGlobals(callback) {
     url += "&redirect_uri=" + encodeURI(redirect_uri);
     url += "&show_dialog=false";
     url += "&scope=user-read-private ugc-image-upload user-read-playback-state user-modify-playback-state user-read-currently-playing streaming playlist-modify-private playlist-modify-public user-follow-modify user-follow-read user-read-playback-position user-top-read user-read-recently-played user-library-modify user-library-read user-read-email";
-    window.location.href = url; // Show Spotify's authorization page 
     } 
   
 
