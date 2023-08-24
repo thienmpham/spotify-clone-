@@ -12,7 +12,7 @@ var refresh_token = null;
 var client_id = "930fa5bb5cfb41cd93ee92a8307286a8";
 // var client_secret = process.env.client_secret_key;
 console.log(client_id);
-console.log(client_secret);
+
 
 
 //
@@ -28,7 +28,7 @@ function onPageLoad(){
     }
 }
 
-function handleRedirect(){
+export function handleRedirect(){
     let code = getCode();  
     fetchAccessToken( code );
     //window.history.pushState("", "", redirect_uri); //remove param from url
@@ -56,6 +56,28 @@ function callAuthorizationApi(body){
 }
 
 
+function handleAuthorizationResponse(){
+  if (this.status == 200){
+    var data = JSON.parse(this.responseText);
+    console.log(data);
+    var data = JSON.parse(this.responseText);
+    if ( data.access_token != undefined ){
+      access_token = data.access_token;
+      localStorage.setItem("access_token", access_token);
+    }
+    if ( data.refresh_token != undefined ){
+      refresh_token = data.refresh_token;
+      localStorage.setItem("refresh_token", refresh_token);
+    }
+    onPageLoad();
+}
+  else {
+    console.log(this.responseText);
+    alert(this.responseText);
+  }
+}
+
+
 // Parses through the url 
 // and gets the value
 // of code 
@@ -73,13 +95,13 @@ function getCode(){
 }
 
 
-function initalizeGlobals(callback) {
-  client_id = process.env.client_id_key; 
-  client_secret = process.env.client_secret_key;
+// function initalizeGlobals(callback) {
+//   client_id = process.env.client_id_key; 
+//   client_secret = process.env.client_secret_key;
 
-  callback();
+//   callback();
 
-}
+// }
 
 
 // Creates a unique link to
@@ -96,24 +118,3 @@ function initalizeGlobals(callback) {
     } 
   
 
-
-  function handleAuthorizationResponse(){
-    if (this.status == 200){
-      var data = JSON.parse(this.responseText);
-      console.log(data);
-      var data = JSON.parse(this.responseText);
-      if ( data.access_token != undefined ){
-        access_token = data.access_token;
-        localStorage.setItem("access_token", access_token);
-      }
-      if ( data.refresh_token != undefined ){
-        refresh_token = data.refresh_token;
-        localStorage.setItem("refresh_token", refresh_token);
-      }
-      onPageLoad();
-  }
-    else {
-      console.log(this.responseText);
-      alert(this.responseText);
-    }
-  }
