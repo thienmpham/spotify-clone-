@@ -2,7 +2,7 @@
 // require('dotenv').config();
 
 
-var redirect_uri = "http://127.0.0.1:5500/";
+var redirect_uri = "http://127.0.0.1:5500/src/";
 var auth_endpoint  = "https://accounts.spotify.com/authorize";
 var TOKEN = "https://accounts.spotify.com/api/token";
 var access_token = null;
@@ -11,7 +11,7 @@ var refresh_token = null;
 
 var client_id = "930fa5bb5cfb41cd93ee92a8307286a8";
 // var client_secret = process.env.client_secret_key;
-console.log(client_id);
+
 
 
 
@@ -34,6 +34,17 @@ function onPageLoad(){
 //     //window.history.pushState("", "", redirect_uri); //remove param from url
     
 // }
+
+export function getCode(){
+  let code = null;
+  const queryString = window.location.search;
+  if ( queryString.length > 0 ){
+      const urlParams = new URLSearchParams(queryString);
+      code = urlParams.get('code')
+  }
+  return code;
+}
+
 
 // function fetchAccessToken( code ){
 //   let body = "grant_type=authorization_code";

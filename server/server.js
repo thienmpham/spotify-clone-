@@ -1,8 +1,8 @@
 // server = require("../client/app.js")
 
-import { getCode } from './app.js'
+// import { getCode } from '../client/app.js'
 
-console.log(getCode);
+// console.log( getCode );
 
 function handleRedirect(){
     let code = getCode();  
