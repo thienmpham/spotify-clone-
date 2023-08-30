@@ -1,5 +1,5 @@
 
-// require('dotenv').config();
+
 
 
 var redirect_uri = "http://127.0.0.1:5500/src/";
@@ -119,7 +119,7 @@ export function getCode(){
 // access the Spotify Authorization page 
 // using the Query parameters in the documentation
 
- function requestAuthorization(){   
+  function requestAuthorization(){   
     let url = auth_endpoint;
     url += "?client_id=" + client_id;
     url += "&response_type=code";
@@ -128,5 +128,11 @@ export function getCode(){
     url += "&scope=user-read-private ugc-image-upload user-read-playback-state user-modify-playback-state user-read-currently-playing streaming playlist-modify-private playlist-modify-public user-follow-modify user-follow-read user-read-playback-position user-top-read user-read-recently-played user-library-modify user-library-read user-read-email";
     window.location.href = url;
   } 
-  
+  document.getElementById('sign-in-button').addEventListener('click', requestAuthorization);
+
+  window.addEventListener('load', (event) => {
+    onPageLoad();
+    console.log('hi');
+  });
+
 
