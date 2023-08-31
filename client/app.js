@@ -19,14 +19,7 @@ var client_id = "930fa5bb5cfb41cd93ee92a8307286a8";
 // Authorization for Spotify 
 //
 
-function onPageLoad(){
-  // client_id = localStorage.getItem("client_id");
-  // client_secret = localStorage.getItem("client_secret");
 
-    if( window.location.search.length > 0 ){
-        handleRedirect();
-    }
-}
 
 // export function handleRedirect(){
 //     let code = getCode();  
@@ -130,9 +123,5 @@ export function getCode(){
   } 
   document.getElementById('sign-in-button').addEventListener('click', requestAuthorization);
 
-  window.addEventListener('load', (event) => {
-    onPageLoad();
-    console.log('hi');
-  });
-
+ 
 

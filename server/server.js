@@ -1,15 +1,31 @@
 // server = require("../client/app.js")
 
-import { getCode } from '../client/app.js'
+export function getCode(){
+  let code = null;
+  const queryString = window.location.search;
+  if ( queryString.length > 0 ){
+      const urlParams = new URLSearchParams(queryString);
+      code = urlParams.get('code')
+  }
+  return code;
+}
+
 
 console.log( getCode );
+function onPageLoad(){
+  if( window.location.search.length > 0 ){
+      handleRedirect();
+  }
+};
+window.onload = onPageLoad();
+
 
 function handleRedirect(){
     let code = getCode();  
     fetchAccessToken( code );
     //window.history.pushState("", "", redirect_uri); //remove param from url
     console.log(code);
-}
+};
 
 function fetchAccessToken( code ){
   let body = "grant_type=authorization_code";
@@ -19,7 +35,7 @@ function fetchAccessToken( code ){
   body += "&client_secret=" + client_secret;
   callAuthorizationApi(body);
   
-}
+};
 
 function callAuthorizationApi(body){
     let xhr = new XMLHttpRequest(); 
@@ -29,7 +45,7 @@ function callAuthorizationApi(body){
     xhr.send(body);
     xhr.onload = handleAuthorizationResponse;
     
-}
+};
 
 
 function handleAuthorizationResponse(){
@@ -51,4 +67,4 @@ function handleAuthorizationResponse(){
     console.log(this.responseText);
     alert(this.responseText);
   }
-}
+};
