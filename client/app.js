@@ -28,15 +28,15 @@ var client_id = "930fa5bb5cfb41cd93ee92a8307286a8";
     
 // }
 
-export function getCode(){
-  let code = null;
-  const queryString = window.location.search;
-  if ( queryString.length > 0 ){
-      const urlParams = new URLSearchParams(queryString);
-      code = urlParams.get('code')
-  }
-  return code;
-}
+// export function getCode(){
+//   let code = null;
+//   const queryString = window.location.search;
+//   if ( queryString.length > 0 ){
+//       const urlParams = new URLSearchParams(queryString);
+//       code = urlParams.get('code')
+//   }
+//   return code;
+// }
 
 
 // function fetchAccessToken( code ){
