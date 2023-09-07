@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+    <link rel="stylesheet" href="login2.css">
+    <script src="https://kit.fontawesome.com/914fe28cc2.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="onPageLoad()">
+  <div class="inputId">
+    <div class="inputClientId">
+      <label for="clientId">Client Id</label>
+      <input type="text" class="" id="clientId" placeholder="">
+    </div>
+    <div class="inputSecret">
+      <label for="clientSecret">Client Secret</label>
+      <input type="text" class="" id="clientSecret" placeholder="">
+    </div>
+    <div class="authorization">
+        <input onclick="requestAuthorization()" id="requestAuthor" type="button" class="button1" value="Request Authorization">
+    </div>
+  </div>
+  <script src="/client/app.js"></script>
+</body>
+</html>
