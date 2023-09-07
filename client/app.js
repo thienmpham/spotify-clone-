@@ -1,18 +1,18 @@
 var redirect_uri = "http://127.0.0.1:5500/src/index.html";
-const auth_endpoint  = "https://accounts.spotify.com/authorize";
-const TOKEN = "https://accounts.spotify.com/api/token";
 var access_token = null;
 var refresh_token = null;
 
 var client_id = "";
 var client_secret = "";
 
+const auth_endpoint  = "https://accounts.spotify.com/authorize";
+const TOKEN = "https://accounts.spotify.com/api/token";
 
 
 function onPageLoad(){
     client_id = localStorage.getItem("client_id");
     client_secret = localStorage.getItem("client_secret");
-    if( window.location.length > 0){
+    if( window.location.search.length > 0){
       handleRedirect();
     }
 }
@@ -25,16 +25,22 @@ function handleRedirect(){
     
 }
 
+
+//Parses through the url 
+//and gets the value
+//of code 
 function getCode(){
   let code = null;
   const queryString = window.location.search;
   if ( queryString.length > 0 ){
-      const urlParams = new URLSearchParams(queryString);
-      code = urlParams.get('code')
+    const urlParams = new URLSearchParams(queryString); // Turns URL into URLSearchParams object to through parse easier
+    code = urlParams.get("code");
+    console.log(code);
+    window.localStorage.setItem("code", code);
   }
   return code;
+  
 }
-
 
 function fetchAccessToken( code ){
   let body = "grant_type=authorization_code";
@@ -47,6 +53,10 @@ function fetchAccessToken( code ){
 }
 
 function callAuthorizationApi(body){
+    client_id= localStorage.getItem("client_id");
+    client_secret= localStorage.getItem("client_secret");
+    console.log(client_id);
+    
     let xhr = new XMLHttpRequest(); 
     xhr.open("POST", TOKEN, true); 
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -79,21 +89,7 @@ function handleAuthorizationResponse(){
 }
 
 
-//Parses through the url 
-//and gets the value
-//of code 
-function getCode(){
-  let code = null;
-  const queryString = window.location.search;
-  if ( queryString.length > 0 ){
-    const urlParams = new URLSearchParams(queryString); // Turns URL into URLSearchParams object to through parse easier
-    code = urlParams.get("code");
-    console.log(code);
-    window.localStorage.setItem("code", code);
-  }
-  
-  
-}
+
 
 //Creates a unique link to
 //access the Spotify Authorization page 
